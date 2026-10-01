@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo - Pedro Henrique Sell</title>
+    <!-- Fontes importadas do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500;600&family=Inter:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #1e293b;
+            --accent: #2563eb;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --border: #e2e8f0;
+            
+            /* Definição de Fontes */
+            --font-main: 'Inter', sans-serif;
+            --font-sidebar: 'Plus Jakarta Sans', sans-serif;
+            --font-tech: 'Fira Code', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: #0f172a;
+            color: var(--text-dark);
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .resume-container {
+            background-color: var(--white);
+            width: 100%;
+            max-width: 900px;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* Sidebar Left - Utilizando a nova fonte 'Plus Jakarta Sans' */
+        .sidebar {
+            font-family: var(--font-sidebar);
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 40px 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .profile-section {
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            margin-bottom: 15px;
+        }
+
+        .sidebar h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: #93c5fd;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            font-size: 0.88rem;
+            line-height: 1.4;
+            color: #cbd5e1;
+            margin-bottom: 12px;
+            word-break: break-word;
+        }
+
+        .contact-info a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--white);
+        }
+
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            font-size: 0.88rem;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 7px 12px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            color: #e2e8f0;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Main Content Right */
+        .main-content {
+            padding: 40px;
+            background-color: var(--white);
+        }
+
+        .header-title {
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 20px;
+        }
+
+        .header-title h1 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .header-title .job-title {
+            font-size: 1.1rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background-color: var(--border);
+        }
+
+        .about-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-muted);
+        }
+
+        .timeline-item {
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 15px;
+            border-left: 2px solid var(--accent);
+        }
+
+        .timeline-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* Alterada a fonte para o nome das empresas e faculdade */
+        .timeline-subtitle {
+            font-family: var(--font-tech);
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-top: 2px;
+            margin-bottom: 5px;
+            letter-spacing: -0.3px;
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .timeline-desc {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .resume-container {
+                grid-template-columns: 1fr;
+            }
+            body {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="resume-container">
+        <!-- Sidebar Esquerda: Contato e Competências -->
+        <aside class="sidebar">
+            <div class="profile-section">
+                <img class="profile-image" src="https://static.wikia.nocookie.net/metalgear/images/1/16/Venom_Snake.Motherbase.jpg/revision/latest?cb=20210324042507" alt="Foto de Perfil de Pedro Henrique Sell">
+            </div>
+
+            <div class="contact-info">
+                <h3>Contato</h3>
+                <p><strong>E-mail:</strong><br><a href="mailto:pedrohsell281@gmail.com">pedrohsell281@gmail.com</a></p>
+                <p><strong>Telefone:</strong><br>(48) 98474-3429</p>
+                <p><strong>Localização:</strong><br>São José, SC</p>
+                <p><strong>GitHub:</strong><br><a href="https://github.com/Elpotato30" target="_blank">github.com/Elpotato30</a></p>
+                <p><strong>LinkedIn:</strong><br><a href="#" target="_blank">linkedin.com/in/pedrohsell</a></p>
+            </div>
+
+            <div>
+                <h3>Habilidades Técnicas</h3>
+                <ul class="skills-list">
+                    <li>HTML5 / CSS3 / Python</li>
+                    <li>Lógica de Programação</li>
+                    <li>Banco de Dados (SQL)</li>
+                    <li>Git & GitHub</li>
+                    <li>Metodologias Ágeis</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Idiomas</h3>
+                <ul class="skills-list">
+                    <li>Português (Nativo)</li>
+                    <li>Inglês (Técnico)</li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Conteúdo Principal Direita -->
+        <main class="main-content">
+            <header class="header-title">
+                <h1>Pedro Henrique Sell</h1>
+                <div class="job-title">Desenvolvedor de Software / Analista de Sistemas</div>
+            </header>
+
+            <section class="section">
+                <h2 class="section-title">Perfil Profissional</h2>
+                <p class="about-text">
+                    Estudante de Análise e Desenvolvimento de Sistemas focado na criação de soluções tecnológicas eficientes, funcionais e bem estruturadas. Apaixonado por desenvolvimento de software, resolução de problemas e aprendizado contínuo de novas tecnologias.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Formação Acadêmica</h2>
+                <div class="timeline-item">
+                    <div class="timeline-title">Análise e Desenvolvimento de Sistemas</div>
+                    <div class="timeline-subtitle">Faculdade Municipal da Palhoça</div>
+                    <div class="timeline-date">Previsão de Conclusão: 2029</div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Experiência Profissional</h2>
+                <div class="timeline-item">
+                    <div class="timeline-title">Desenvolvedor Front-end / Estagiário de TI</div>
+                    <div class="timeline-subtitle">Sei Lá</div>
+                    <div class="timeline-date">Jan 2023 - Presente</div>
+                    <p class="timeline-desc">
+                        Desenvolvimento e manutenção de interfaces web responsivas, otimização de sistemas, 
+                        integração de APIs RESTful e suporte ao time de desenvolvimento na resolução de chamados técnicos.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Projetos em Destaque</h2>
+                <div class="timeline-item">
+                    <div class="timeline-title">Projeto de Sistema Web</div>
+                    <div class="timeline-desc">
+                        Desenvolvimento de uma aplicação web para gerenciamento de dados utilizando Python, HTML5 e CSS3 com integração a banco de dados relacional.
+                    </p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
